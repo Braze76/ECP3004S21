@@ -4,9 +4,9 @@
 #
 # ECP 3004: Python for Business Analytics
 #
-# Name: 
+# Name: Brandon Azevedo
 #
-# Date:
+# Date: 1/31/21
 # 
 ##################################################
 #
@@ -21,78 +21,103 @@
 # Import Required Modules
 ##################################################
 
-# import name_of_module
+import math
+math.pi
 
+import math
+math.e
+"""For Logit link function
+"""
 
 ##################################################
 # Function Definitions
 ##################################################
 
-# Exercise 1
 
-def average(num1: float, num2: float) -> float:
-    """Return the average of num1 and num2.
+#####
+#Example 1
+#####
 
-    >>> average(10,20)
-    15.0
-    >>> average(2.5, 3.0)
-    2.75
+
+def average(num1,num2):
+    """Return the average of num1 + num2
     """
+    
+    return( (num1 + num2) / 2)
 
-    return num1 + num2 / 2
+print(average(3,7))
 
+print(average(8,10))
 
+print(average(20,50))
 
-# Define the rest of your functions for Exercises 2-6.
- 
-
-
-
-
-
-
-##################################################
-# Run the examples to test these functions
-##################################################
+#Got 5, 9, 35 All correct
 
 
-# Test the examples and print the results. 
+#####
+#Example 2
+#####
 
 
-print("#" + 50*"-")
-print("Testing my Examples for Exercise 1.")
+def area_of_circle(Radius):
+    
+    return ((math.pi)*Radius**2)
+    
+print(area_of_circle(5))
 
-print("#" + 50*"-")
-print("Exercise 1, Example 1:")
-print("Evaluating average(10,20)")
-print("Expected: " + str(15.0))
-print("Got: " + str(average(10,20)))
+print(area_of_circle(8))
 
+print(area_of_circle(15))
 
-print("#" + 50*"-")
-print("Exercise 1, Example 2:")
-print("Evaluating average(2.5, 3.0)")
-print("Expected: " + str(2.75))
-print("Got: " + str(average(2.5, 3.0)))
+#Got 78.539, 201.061, 706.857 All correct
 
+#####
+#Example 3
+#####
 
-print("#" + 50*"-")
-print("Exercise 1, Example 3:")
-# ...
+def Volume_of_cylinder(Radius,Height):
+    
+    return (Height*(math.pi)*Radius**2)
 
-print("#" + 50*"-")
-print("Testing my Examples for Exercise 2.")
+print (Volume_of_cylinder(5,10))
 
+print (Volume_of_cylinder(10,15))
 
-# ...
-
-# Continue with the rest of your examples.
-# Test all functions with three examples each. 
-
-# Choose good examples that will test interesting cases. 
-# Make sure they all work correctly. 
+print (Volume_of_cylinder(20,50))
 
 
-##################################################
-# End
-##################################################
+#Got 785.3975, 4712.385, 62831.8 All correct
+
+#####
+#Example 4
+#####
+
+def Utility(x,y,a):
+    
+    """This is the Cobb Douglas utiluty function
+    """
+    
+    return((x**a) * ((y)**(1 -a)))
+
+print(Utility(1,2,5))
+
+print(Utility(1,3,8))
+
+print(Utility(5,8,9))
+
+#Got answers of   0.0625, 0.0004572473708276177, 0.11641532182693481 
+
+
+###
+#Example 5
+###
+
+def logit(x,B0,B1):
+    """This will calculate the logit link function with arguments of x, B0, and B1
+    """
+  
+    return((math.e **(B0+(x*B1)))/(1+(math.e**(B0+(x*B1)))))
+
+
+
+#QUESTION 2 (Honestly I had no idea how to do this part and don't have enough time to finish it, I think my prints above kinda answer it)
